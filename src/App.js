@@ -1,25 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import './App.css'; 
+import './App.css';
+import Nav from './components/Navbar.js'
+import About from './components/About.js';
+import AnimatedNumbers from './components/numbers'
+import Services from './components/Services'
+import Clients from './components/Clients'
+import Contact from './components/Contact'
+import Admin from './components/Admin';
+import Work from './components/Work'
+import {  Route, BrowserRouter as Router , Routes} from 'react-router-dom'
+import Prices from './components/prices';
+import Login from './components/login';
+import Add from './components/add';
+
+    function App() {
+      return (
+        <>
+      
+        <Routes>
+        <Route  exact path="/admin"  element={<Login/>}/>
+        <Route   path="/"  element={<HomePage />}/> 
+          </Routes>
+    
+         
+        </>
+      );
+    }
+    function HomePage() {
+      return (
+        <>
+          <Nav />
+          <AnimatedNumbers />
+          <About />
+          <Services />
+          <Clients />
+          <Contact />
+          <Work />
+          <Prices />
+          <Add/>
+        </>
+      );
+    }
 
 export default App;
